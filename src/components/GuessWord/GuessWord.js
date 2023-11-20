@@ -4,11 +4,11 @@ function GuessWord() {
   const [guessedWord, setGuessedWord] = React.useState('')
 
   function handleSubmit(event) {
+    event.preventDefault()
     if (guessedWord.length !== 5) {
-      window.alert('The word must have exactly 5 letters!')
+      window.alert('Please enter exactly 5 letters!')
       return
     }
-    event.preventDefault()
     console.log({ guess: guessedWord })
     setGuessedWord('')
   }
@@ -18,6 +18,7 @@ function GuessWord() {
       <form onSubmit={handleSubmit} className='guess-input-wrapper'>
         <label htmlFor='guess-input'>Enter guess:</label>
         <input
+          required
           type='text'
           id='guess-input'
           value={guessedWord}
