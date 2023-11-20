@@ -10,7 +10,11 @@ const answer = sample(WORDS)
 console.info({ answer })
 
 function Game() {
-  return <>{GuessWord()}</>
+  return (
+    <>
+      <GuessWord />
+    </>
+  )
 }
 
 export default Game
