@@ -1,16 +1,17 @@
 import React from 'react'
 
-function GuessWord() {
-  const [guessedWord, setGuessedWord] = React.useState('')
+function GuessWord({ handleGuessList }) {
+  const [tentativeGuess, setTentativeGuess] = React.useState('')
 
   function handleSubmit(event) {
     event.preventDefault()
-    if (guessedWord.length !== 5) {
+    if (tentativeGuess.length !== 5) {
       window.alert('Please enter exactly 5 letters!')
       return
     }
-    console.log({ guess: guessedWord })
-    setGuessedWord('')
+    console.log({ guess: tentativeGuess })
+    handleGuessList(tentativeGuess)
+    setTentativeGuess('')
   }
 
   return (
@@ -21,8 +22,8 @@ function GuessWord() {
           required
           type='text'
           id='guess-input'
-          value={guessedWord}
-          onChange={(event) => setGuessedWord(event.target.value.toUpperCase())}
+          value={tentativeGuess}
+          onChange={(event) => setTentativeGuess(event.target.value.toUpperCase())}
         ></input>
       </form>
     </div>
