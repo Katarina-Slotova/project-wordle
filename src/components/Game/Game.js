@@ -19,7 +19,7 @@ function Game() {
 
   return (
     <>
-      <PreviousGuesses previousWords={previousWords} />
+      <PreviousGuesses previousWords={previousWords} answer={answer} />
       <GuessWord handleGuessList={handleGuessList} />
     </>
   )
