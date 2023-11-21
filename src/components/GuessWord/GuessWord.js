@@ -1,6 +1,6 @@
 import React from 'react'
 
-function GuessWord({ handleGuessList }) {
+function GuessWord({ handleGuessList, gameStatus }) {
   const [tentativeGuess, setTentativeGuess] = React.useState('')
 
   function handleSubmit(event) {
@@ -20,10 +20,13 @@ function GuessWord({ handleGuessList }) {
         <label htmlFor='guess-input'>Enter guess:</label>
         <input
           required
+          disabled={gameStatus !== ''}
           type='text'
           id='guess-input'
           value={tentativeGuess}
-          onChange={(event) => setTentativeGuess(event.target.value.toUpperCase())}
+          onChange={(event) =>
+            setTentativeGuess(event.target.value.toUpperCase())
+          }
         ></input>
       </form>
     </div>
