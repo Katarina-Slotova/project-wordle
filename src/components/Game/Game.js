@@ -14,8 +14,7 @@ function Game() {
   const [previousWords, setPreviousWords] = React.useState([])
 
   function handleGuessList(guess) {
-    const nextPreviousWords = { value: guess, id: crypto.randomUUID() }
-    setPreviousWords([...previousWords, nextPreviousWords])
+    setPreviousWords([...previousWords, guess])
   }
 
   return (
