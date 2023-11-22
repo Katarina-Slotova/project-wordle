@@ -9,7 +9,6 @@ function GuessWord({ handleGuessList, gameStatus }) {
       window.alert('Please enter exactly 5 letters!')
       return
     }
-    console.log({ guess: tentativeGuess })
     handleGuessList(tentativeGuess)
     setTentativeGuess('')
   }
